@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Estimator
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- add icon link -->
+        <link rel = "icon" href="static\car-battery-solid.svg" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    </head>
+    <style>
+        body{
+            background-image: url('static/background.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: top; 
+            letter-spacing: 0.02em;
+            font-weight: 400;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;  
+            justify-content: center;         
+        }
+        
+
+        .navbar{
+                width: inherit;
+                overflow: visible;
+                position: relative;
+                background-color: transparent;
+                text-align-last: center;
+                margin-top: 2cm;
+        }
+        .navbar a{
+            color: white;
+            padding:10px 10px 10px 10px;  
+            font-size: larger;          
+        }
+        .navbar a:hover{
+            background-color: #58213e;
+            transition-delay: .1s;
+            color: rgba(8, 8, 8, 0.829);
+            border-radius: 8px;
+        }
+        .navbar a.active{
+            background-color: #58213e;
+            color: rgba(8, 8, 8, 0.829);
+            border-radius: 8px;
+        }
+       
+        .blurred-box{
+            float: none;
+            width: 50%;
+            height: fit-content;  
+            position: absolute;           
+            border-radius: 2px;
+            padding: 10px 10px 10px 10px;            
+            overflow: hidden;
+            margin-left: 12cm;
+            margin-right: 7cm;
+            margin-bottom: 1cm;
+            margin-top: 1cm;
+            justify-content: center;
+       }
+       .blurred-box:before{
+              
+            content: '';
+            border-radius: 8px;
+            left: -25px;  
+            right: 0;
+            top: -25px;  
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0; 
+            bottom: 0;            
+            box-shadow: inset 0 0 0 2000px rgb(255, 255, 255,0.1);
+            filter: blur(1px);
+       }
+        .t-tile{
+            text-align: center;
+            background: -webkit-linear-gradient(top, rgb(255, 102, 0), white);
+            background: linear-gradient(top, rgb(255, 102, 0), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            font-family: 'Allerta Stencil';
+        }
+        .blurred-box .row{
+            padding: 10px 10px 10px 10px;
+            margin-bottom: 2cm;
+        }
+        .contact{
+    
+    display: flex;
+   
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2cm;
+}
+
+.contact form{
+    flex:1 1 40rem;
+    padding:2rem;
+    margin:1rem;
+    margin-top: 4rem;
+    box-shadow: 0 0 .5rem rgb(148, 148, 148);
+}
+
+
+
+ form .box{
+    width:100%;
+    color:#333;
+    height:4rem;
+    font-size: 1.7rem;
+    border-bottom: .2rem solid rgba(0,0,0,.3);
+    text-transform: none;
+    margin:1rem 0;
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+.contact form .box::placeholder{
+    text-transform: capitalize;
+}
+
+.contact form .box:focus{
+    border-color: var(--orange);
+}
+        
+
+    </style>
+    <header>
+        <!--Nav bar-->
+        <div class='navbar'>
+            <a href='home'><i class='fas fa fa-home'> Home</i></a>
+            <a href='estimator' class='active'><i class='fas fa fa-battery-half'> Estimator</i></a>
+            <a href='info'><i class='fas fa fa-info'> Info</i></a>
+        </div>
+        <!--End Nav bar-->
+    </header>
+    <body>
+        <!--Content-->
+        <div class='blurred-box'>
+            <div class='row'>
+                <h1 style="color: white;margin-bottom: 1cm;"><b>Battery Features</b></h1>
+                
+                    
+                    <form action="{{url_for('result')}}" method="POST">
+                        
+                        <h4 for="dmax_time" style="color: white; opacity: 70%;">Time Taken Fully Discharge</h4>
+                        <input style="width: 12cm; margin-bottom: 1cm;" type="number" step="any" class="box" placeholder="3500 - 6500" name='dmax_time'><br>
+                        <h4 for="vthreshold" style="color: white; opacity: 70%; margin-bottom: 1cm;">Thershold Voltage</h4>
+                        <select style="size: 5cm; width: 12cm; height: 1cm; text-align: center; margin-bottom: 1cm;" id="vthreshold" name="vthreshold">
+                            <option style="size: 5cm; width: 5cm; height: 1cm; text-align: center;margin-bottom: .5cm;" value=2 >2 V</option>
+                            <option style="size: 5cm; width: 5cm; height: 1cm; text-align: center;margin-bottom: .5cm;" value=2.2>2.2 V</option>
+                            <option style="size: 5cm; width: 5cm; height: 1cm; text-align: center;margin-bottom: .5cm;" value=2.5>2.5 V</option>
+                            <option style="size: 5cm; width: 5cm; height: 1cm; text-align: center;margin-bottom: .5cm;" value=2.7>2.7 V</option>
+                          </select><br>
+                        <h4 for="dmax_time" style="color: white; opacity: 70%;border: none;">Time Taken to reach Minimum Threshold Voltage - Discharge</h4>
+                        <input style="width: 12cm; margin-bottom: 1cm;" type="number" step="any" class="box" placeholder="2600 - 6500" name='dmax_vtime'><br>
+                        
+                        <input style="width: 5cm;" style="margin-bottom: 2cm;" href='result' type="submit" step="any" class="btn btn-primary" value="Predict"><br>
+                        <img src="static/graph1.gif" alt="" style="width: 30%;"><br>
+                    </form>
+                    
+                
+                    <p style="text-align:center;color: lightseagreen; margin-top: 1cm;">Battery Health - <b>99% </b>Accuracy</p>
+                    <p style="text-align:center;color: lightseagreen;">   Remaining Useful Life of battery - <b>89%</b> Accuracy</p>
+
+                    
+            </div>
+            <a href="https://github.com/Muthu29Periyal/NasaBattery_All"> <i style="font-size:36px;color:white; margin-top:1cm;" class="fa">&#xf09b;</i></a>
+            <footer style="text-align: center; margin-top: 1cm; color: white; margin-bottom: 2cm;">&copy; Copyright 2021</footer>
+            
+        </div>
+
+</html>

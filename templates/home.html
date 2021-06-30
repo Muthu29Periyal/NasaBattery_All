@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>
+            Home
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- add icon link -->
+        <link rel = "icon" href="static\home-solid.svg" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    </head>
+    <style>
+        body{
+            background-image: url('static/background.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: top; 
+            letter-spacing: 0.02em;
+            font-weight: 400;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;  
+            justify-content: center;         
+        }
+        
+
+        .navbar{
+                width: inherit;
+                overflow: visible;
+                position: relative;
+                background-color: transparent;
+                text-align-last: center;
+                margin-top: 2cm;
+        }
+        .navbar a{
+            color: white;
+            padding:10px 10px 10px 10px;  
+            font-size: larger;          
+        }
+        .navbar a:hover{
+            background-color: #58213e;
+            transition-delay: .1s;
+            color: rgba(8, 8, 8, 0.829);
+            border-radius: 8px;
+        }
+        .navbar a.active{
+            background-color: #58213e;
+            color: rgba(8, 8, 8, 0.829);
+            border-radius: 8px;
+        }
+       
+        .blurred-box{
+            float: none;
+            width: 50%;
+            height: auto;  
+            position: absolute;           
+            border-radius: 2px;
+            padding: 8px 8px 8px 8px;            
+            overflow: hidden;
+            margin-left: 12cm;
+            margin-right: 7cm;
+            margin-bottom: 1cm;
+            justify-content: center;
+       }
+       .blurred-box:before{
+              
+            content: '';
+            background: inherit; 
+            position: inherit;
+            border-radius: 8px;
+            left: -25px;  
+            right: 0;
+            top: -25px;  
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0; 
+            bottom: 0;            
+            box-shadow: inset 0 0 0 2000px rgb(255, 255, 255,0.1);
+            filter: blur(1px);
+            margin-bottom: 1cm;
+            padding: 10px 10px 10px 10px;
+       }
+        .t-tile{
+            text-align: center;
+            background: -webkit-linear-gradient(top, rgb(255, 102, 0),red,orange,yellow);
+            background: linear-gradient(top, rgb(255, 102, 0), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            font-family: 'Allerta Stencil';
+        }
+        .blurred-box .row{
+            padding: 10px 10px 10px 10px;
+        }
+
+
+        
+
+    </style>
+    <header>
+        <!--Nav bar-->
+        <div class='navbar'>
+            <a href='home' class='active'><i class='fas fa fa-home'> Home</i></a>
+            <a href='estimator'><i class='fas fa fa-battery-half'> Estimator</i></a>
+            <a href='info'><i class='fas fa fa-info'> Info</i></a>
+        </div>
+        <!--End Nav bar-->
+    </header>
+    <body>
+        <!--Content-->
+        <div class='blurred-box'>
+            <div class='row'>
+                    <div class='t-tile'>Battery Estimation</div>
+                        <h2 style="color:white;"></h2>
+                        <h2 style="color:rgb(70, 163, 250); ">Description</h2> 
+                        <p style="opacity: 85%;  color: whitesmoke;">Experiments on Li-Ion batteries. Charging and discharging at different temperatures. Records the impedance as the damage criterion. The data set was provided by the Prognostics CoE at NASA Ames.</p>
+                        <h2 style="color:rgb(70, 163, 250);  ">Format</h2>
+                        <p style="opacity: 85%; color: whitesmoke;" >The set is in .mat format and has been zipped.</p>
+                        <h2 style="color:rgb(70, 163, 250);">Datasets</h2>
+                        <p><li style="opacity: 85%;  color: whitesmoke;">+ Download Battery Data Set 1 (36645 downloads)</li><li style="opacity: 85%;  color: whitesmoke;">+ Download Battery Data Set 2 (17451 downloads)</li><li style="opacity: 85%;  color: whitesmoke;">+ Download Battery Data Set 3 (14287 downloads)</li><li style="opacity: 85%;  color: whitesmoke;">+ Download Battery Data Set 4 (11020 downloads)</li><li style="opacity: 85%;  color: whitesmoke;">+ Download Battery Data Set 5 (11769 downloads)</li><li style="opacity: 85%;  color: whitesmoke;">+ Download Battery Data Set 6 (12402 downloads)</li></p>
+                        <h2 style="color:rgb(73, 141, 204);">Dataset Citation</h2>
+                        <p style="opacity: 85%;  color: whitesmoke;">	B. Saha and K. Goebel (2007). "Battery Data Set", NASA Ames Prognostics Data Repository (<a href="https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/">Dataset</a>), NASA Ames Research Center, Moffett Field, CA</p>        
+                    <div class='dataset'>
+                        <h2 style="color:rgb(70, 163, 250); ">Data Description</h2>
+                        <p style="opacity: 85%;  color: whitesmoke;">A set of four Li-ion batteries (# 45 - 48) were run through 3 different operational profiles (charge, discharge and impedance) at an ambient temperature of 4 deg C. 
+                            Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. 
+                            "Fixed load current level of 1A" was used and the discharge runs were stopped at 2V, 2.2V, 2.5V and 2.7V for batteries 45, 46, 47 and 48.</p>
+                        <h2 style="color:rgb(70, 163, 250); ">Data structure</h2>
+                        <p><li style="opacity: 85%;  color: whitesmoke;">
+                            cycle-	top level structure array containing the charge, discharge and impedance operations
+                        </li>
+                        <li style="opacity: 85%;  color: whitesmoke;">
+                            type: 	operation  type, can be charge, discharge or impedance
+                        </li>
+                        <li style="opacity: 85%;  color: whitesmoke;">
+                            ambient_temperature:	ambient temperature (degree C)
+                        </li>
+                        <li style="opacity: 85%;  color: whitesmoke;">
+                            time: 	the date and time of the start of the cycle, in MATLAB  date vector format
+                        </li>
+                        <li style="opacity: 85%;  color: whitesmoke; margin-bottom: 2cm;">
+                            data:	data structure containing the measurements
+                        </li></p>
+                    </div> 
+
+                 
+
+
+            </div>
+            <a href="https://github.com/Muthu29Periyal/NasaBattery_All"> <i style="font-size:36px;color:white; margin-top:1cm;" class="fa">&#xf09b;</i></a>
+            <footer style="text-align: center; margin-top: 1cm; color: white; margin-bottom: 2cm;">&copy; Copyright 2021</footer>
+        </div>
+        <!--Content End-->
+    </body>
+</html>

@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Info
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- add icon link -->
+        <link rel = "icon" href="static\info-solid.svg" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    </head>
+    <style>
+        body{
+            background-image: url('static/background.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: top; 
+            letter-spacing: 0.02em;
+            font-weight: 400;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;  
+            justify-content: center;         
+        }
+        
+
+        .navbar{
+                width: inherit;
+                overflow: visible;
+                position: relative;
+                background-color: transparent;
+                text-align-last: center;
+                margin-top: 2cm;
+        }
+        .navbar a{
+            color: white;
+            padding:10px 10px 10px 10px;  
+            font-size: larger;          
+        }
+        .navbar a:hover{
+            background-color: #58213e;
+            transition-delay: .1s;
+            color: rgba(8, 8, 8, 0.829);
+            border-radius: 8px;
+        }
+        .navbar a.active{
+            background-color: #58213e;
+            color: rgba(8, 8, 8, 0.829);
+            border-radius: 8px;
+        }
+       
+        .blurred-box{
+            float: none;
+            width: 50%;
+            height: fit-content;  
+            position: absolute;           
+            border-radius: 2px;
+            padding: 10px 10px 10px 10px;            
+            overflow: hidden;
+            margin-left: 12cm;
+            margin-right: 7cm;
+            margin-bottom: 1cm;
+            margin-top: 1cm;
+            justify-content: center;
+       }
+       .blurred-box:before{
+              
+            content: '';
+            background: inherit; 
+            position: inherit;
+            border-radius: 8px;
+            left: -25px;  
+            right: 0;
+            top: -25px;  
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0; 
+            bottom: 0;            
+            box-shadow: inset 0 0 0 2000px rgb(255, 255, 255,0.1);
+            filter: blur(1px);
+            margin-bottom: 1cm;
+            padding: 10px 10px 10px 10px;
+       }
+        .t-tile{
+            text-align: center;
+            background: -webkit-linear-gradient(top, rgb(255, 102, 0), white);
+            background: linear-gradient(top, rgb(255, 102, 0), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            font-family: 'Allerta Stencil';
+        }
+        .blurred-box .row{
+            padding: 10px 10px 10px 10px;
+            margin-bottom: 2cm;
+        }
+        .contact{
+    
+    display: flex;
+   
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2cm;
+}
+
+.contact form{
+    flex:1 1 40rem;
+    padding:2rem;
+    margin:1rem;
+    margin-top: 4rem;
+    box-shadow: 0 0 .5rem rgb(148, 148, 148);
+}
+
+.contact .content{
+    flex:1 1 40rem;
+    padding:3rem 1rem;
+}
+
+.contact form .box{
+    width:100%;
+    color:#333;
+    height:4rem;
+    font-size: 1.7rem;
+    border-bottom: .2rem solid rgba(0,0,0,.3);
+    text-transform: none;
+    margin:1rem 0;
+    background-color: whitesmoke;
+}
+
+.contact form .box::placeholder{
+    text-transform: capitalize;
+}
+
+.contact form .box:focus{
+    border-color: var(--orange);
+}
+        
+
+    </style>
+    <header>
+        <!--Nav bar-->
+        <div class='navbar'>
+            <a href='home'><i class='fas fa fa-home'> Home</i></a>
+            <a href='estimator'><i class='fas fa fa-battery-half'> Estimator</i></a>
+            <a href='info'  class='active'><i class='fas fa fa-info'> Info</i></a>
+        </div>
+        <!--End Nav bar-->
+    </header>
+    <body>
+        <!--Content-->
+        <div class='blurred-box'>
+            <div class='row'>
+                <h4 style="color:rgb(70, 163, 250); "><B>About</B></h4>
+                        <p style="text-align: justify; padding: 5px 5px 5px 5px; opacity: 85%; color: white;">Among various approaches for implementing prognostic
+                            algorithms data-driven algorithms are popular in the
+                            industry due to their intuitive nature and relatively fast
+                            developmental cycle. However, no matter how easy it may
+                            seem, there are several pitfalls that one must watch out for
+                            while developing a data-driven prognostic algorithm. One
+                            such pitfall is the uncertainty inherent in the system. At each
+                            processing step uncertainties get compounded and can grow
+                            beyond control in predictions if not carefully managed
+                            during the various steps of the algorithms. This analysis from our preliminary development of data-
+                            driven algorithm for predicting end of discharge of Li-ion
+                            batteries using constant load experiment data and challenges
+                            faced when applying these algorithms to randomized
+                            variable loading profile as is the case in realistic
+                            applications. Lessons learned during the development phase
+                            are presented in dataset.  
+                            <h4 style="color:rgb(70, 163, 250); "><B>Model</B></h4>
+                            <p style="opacity: 85%; color: white;">Battery Health : Polynomial Regressor</p>
+                            <p style="opacity: 85%; color: white;">Remaining Useful Life of battery : SVR</p>
+                        </p>
+                        
+                        <img src="static/charge1.gif" alt="" style="width: 10%; justify-self: center;">
+                        
+                        
+            </div>
+            <a href="https://github.com/Muthu29Periyal/NasaBattery_All"> <i style="font-size:36px;color:white;" class="fa">&#xf09b;</i></a>
+            <footer style="text-align: center; margin-top: 1cm; color: white; margin-bottom: 2cm;">&copy; Copyright 2021</footer>
+        </div>
+
+</html>
